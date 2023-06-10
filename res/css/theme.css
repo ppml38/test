@@ -41,7 +41,7 @@ text-align: center;
 }
 
 .name_header .contact{
-	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,monospace,Courier New;
+	//font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,monospace,Courier New;
 	font-size: .9rem;
 	display: inline-block;
 	position: relative;
@@ -164,7 +164,7 @@ text-align: center;
 	transition: all 0.2s ease;
 	animation:animatezoom 0.8s;
 	text-shadow: 0 1px rgba(0,0,0,0.4);
-
+	box-shadow: 0 1px rgba(0,0,0,0.4);
 }
 
 
@@ -536,7 +536,7 @@ Class to make card visible when name hovered
 	display: inline-block;
 	width: 100%;
 	text-align: center;
-	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,monospace,Courier New;
+	//font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,monospace,Courier New;
 	font-size: .9rem;
 	margin-top: 2rem;
 }
@@ -548,6 +548,8 @@ Class to make card visible when name hovered
 }
 .icon .image{
 	display: inline-block;
+	height: 50px;
+	width: 50px;
 }
 .icon .alias{
 	margin-top: .5rem;
@@ -558,41 +560,6 @@ Class to make card visible when name hovered
 	text-decoration: underline;
 }
 
-.mail{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) 73px -88px;
-}
-
-.twitter{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) 73px -227px;
-}
-
-.github{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) 214px -88px;
-}
-
-.stack{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) 211px -225px;
-}
-
-.linkedin{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) 493px -155px;
-}
-
-.orcid{
-	height: 50px;
-	width: 50px;
-	background: url(../img/logostock.jpg) -13px -383px;
-}
 
 @media screen and (max-height: 575px) 
 {
@@ -600,7 +567,9 @@ Class to make card visible when name hovered
 {
 display: none;
 }
-
+.socials{
+	margin-bottom: 2rem;
+}
 }
 
 /*@media screen and (max-width: 480px)*/
@@ -621,7 +590,9 @@ width: 95%;
 .feedback{
 	display: none;
 }
-
+.socials{
+	margin-bottom: 2rem;
+}
 .name_header_logo{
 	width: 100%;
 }
