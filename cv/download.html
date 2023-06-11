@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Settings meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Download Resume</title>
+<style>
+#actual{
+display: none;
+}
+</style>
+<script>
+function download(){
+document.getElementById("status").innerHTML = "Downloading resume..";
+fetch("b64.txt")
+        .then((response) => {
+			if(!response.ok){
+				throw new Error("Status code not 200");
+			}
+			return response.text();})
+        .then((b64) => {
+			let a=document.getElementById("dl");
+			a.href = `data:application/octet-stream;base64, ${b64}`;
+			a.click();
+			document.getElementById("status").innerHTML = "Resume downloaded successfully (PrakashMariaLiju_Resume.pdf).";
+			document.getElementById("actual").style.display="block";
+		})
+		.catch(()=>{
+			document.getElementById("status").innerHTML = "Redirecting to digital resume..";
+			window.location.replace("https://liju.me/cv");
+		});
+}
+</script>
+</head>
+<body onload="try{download();}catch(err){window.location.replace('https://liju.me/cv');}">
+<div id="status">Click <a href="https://liju.me/cv">here</a> to view my resume.</div>
+<div id="actual">
+<br><br>Click <a id="dl" download="PrakashMariaLiju_Resume.pdf" >here</a> to download it again.
+<br><br>Click <a href="https://liju.me/cv">here</a> to go to home page.
+</div>
+</body>
+</html>

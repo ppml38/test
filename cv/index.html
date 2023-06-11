@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Settings meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<!-- Content meta tags -->
+<meta name="description" content="Resume of Prakash Maria Liju"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta name="keywords" content="Prakash maria liju, liju, lijuofficial, ppml38, prakash33"/>
+
+<!-- Twitter cards -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@lijuofficial"/>
+<meta name="twitter:title" content="Liju - Resume"/>
+<meta name="twitter:description" content="Resume of Prakash Maria Liju"/>
+<meta name="twitter:image" content="https://liju.me/res/img/thumbnail.jpg" />
+<meta name="twitter:image:alt" content="Thumbnail image"/>
+
+<!-- Open graph -->
+<meta property="og:url"                content="https://liju.me/cv" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="Liju - Resume" />
+<meta property="og:description"        content="Resume of Prakash Maria Liju" />
+<meta property="og:image"              content="https://liju.me/res/img/thumbnail.jpg" />
+
+<link rel="stylesheet" type="text/css" href="res/css/style.css?v=1">
+<link rel="icon" type="image/png" href="../favicon.png?v=1" />
+
+<script>
+
+function print_resume()
+{
+window.print();
+}
+
+function copylink()
+{
+//Link to be copied in cliboard
+var link = "https://liju.me/cv";
+
+try{
+//Check if clipboard window object supported
+if(window.clipboardData && window.clipboardData.setData){
+	return clipboardData.setData("Text",link);
+}
+//Check if quetcommand excecution is supported`
+else if(document.queryCommandSupported && document.queryCommandSupported("copy"))
+{
+	//Create a text area with the link and execute copy command to copy the link to clipboard`
+	var textarea=document.createElement("textarea");
+	textarea.textContent = link;
+	textarea.style.position="fixed";
+	textarea.style.right="-10%";
+	document.body.appendChild(textarea);
+	textarea.select();
+	try{
+		document.execCommand("copy");
+	}
+	catch(e)
+	{
+		console.log("Exception occured while copying link, Prompting the link");
+		window.prompt("Auto copy not supported.\nPlease copy below link with Ctrl+C/cmd+C and press Enter",link);
+	}
+	finally{
+	document.body.removeChild(textarea);
+	}
+	document.getElementById('msg').style.display='block';
+	console.log("Link copied");
+	setTimeout(function(){document.getElementById('msg').style.display='none';
+	},2500);
+}
+//If nothing supported. Prompt a dialogue box with the data to be copied, so that users can select and copy the link
+else{
+console.log("Autocopy not supported, Prompting the link");
+window.prompt("Auto copy not supported.\nPlease copy below link with Ctrl+C/cmd+C and press Enter",link);
+}
+}
+catch(e)
+{
+console.log("Exception occured somewhere, Prompting the link");
+		window.prompt("Auto copy not supported.\nPlease copy below link with Ctrl+C/cmd+C and press Enter",link);
+}
+}
+
+(function download(){
+fetch("b64.txt")
+        .then((response) => {
+			if(!response.ok){
+				throw new Error("error");
+			}
+			return response.text();
+		})
+        .then((b64) => {
+			let a=document.getElementById("dl");
+			a.href = `data:application/octet-stream;base64, ${b64}`;
+		})
+		.catch((error)=>{
+			//redirect them to our linkedin page.
+			let a=document.getElementById("dl");
+			a.href = "https://linkedin.com/in/prakash33";
+		});
+})();
+
+function checkVisible(elm) {
+	if(!elm) return false;
+	
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 100 || rect.top - viewHeight >= 0); //50 for offset of top bar
+}
+
+
+let highlightableElements = document.getElementsByClassName("highlightable");
+highlight = ()=>{
+	Array.prototype.map.call(highlightableElements,(element)=>{
+		if(Math.round(element.getBoundingClientRect().top/window.innerHeight*100)<75){
+			element.style.backgroundPosition = "left";
+		}
+		else{
+			element.style.backgroundPosition = "";
+		}
+		//let limit = Math.round((window.innerHeight*2/3)/Math.min(element.getBoundingClientRect().top,window.innerHeight)*100);
+		//element.style.backgroundImage = `linear-gradient(90deg, #fdcd3b ${limit}%, white ${limit}%)`;
+	});
+	if(document.getElementById("titleName")){
+		if(checkVisible(document.getElementById("fullname"))===false){
+			document.getElementById("titleName").style.display = "flex";
+		}else{
+			document.getElementById("titleName").style.display = "none";
+		}
+	}
+	
+	requestAnimationFrame(highlight);
+}
+highlight();
+
+
+</script>
+
+<title>Liju - Resume</title>
+</head>
+<body>
+
+<!--
+The blue background
+-->
+<div class="background">
+<a href="https://liju.me" class="back" title="Home">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16">
+<title>Go Home</title>
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+</svg>
+</a>
+
+<span id="titleName">Prakash Maria Liju</span>
+
+<div class="ctl_tray">
+<a id="dl" download="PrakashMariaLiju_Resume.pdf">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="blue" viewBox="0 0 16 16"
+class="icon blue">
+<title>Download resume</title>
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+</svg>
+</a>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16"
+class="icon" onclick="print_resume()" alt="Print" title="Print">
+<title>Print</title>
+  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+</svg>
+
+<a href="mailto:?cc=contact@liju.me&subject=Liju's resume&body=Please find Liju's resume in below link. https://liju.me/cv">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16"
+class="icon">
+<title>Share via email</title>
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+</svg>
+
+</a>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16"
+class="icon" onclick="copylink();" title="Copy Link" alt="Get Link" id="cp"
+>
+<title>Copy link</title>
+  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+</svg>
+
+<div class="arrow" id="arrow"></div>
+<div class="msg" id="msg">Link Copied</div>
+
+</div>
+</div>
+
+
+
+<!-- Paper -->
+<div class="paper">
+<center><h1 id="fullname">Prakash Maria Liju</h1>
+E-mail: <a href="mailto:contact@liju.me">contact@liju.me</a>
+</center>
+
+<h2>SUMMARY</h2>
+<div class="line"></div>
+<div class="section">
+<div class="inner_section">
+<ul>
+<li><span class="highlightable">8+ Years of experience</span> </li>
+<li>3 Years of international work experiencein Australia </li>
+<li>Experience in running my own startup. </li>
+<li>Expert in <span class="highlightable">data structure, algorithms, and system design.</span> </li>
+<li>Experience in full stack development, from LLD, HLD to implementation </li>
+<li>Experience in both Agile and waterfall model of development </li>
+<li><span class="highlightable">Winner in MIT</span> “Beat The Pandemic 2” global hackathon 2020 </li>
+<li><span class="highlightable">First class</span> graduate in computer science and engineering </li>
+<li>School <span class="highlightable">topper</span> in HSC and SSLC</li>
+</ul>
+</div>
+</div>
+
+<h2>EXPERIENCE</h2>
+<div class="line"></div>
+<div class="section">
+<div class="inner_section">
+<b><span class="highlightable">Amazon</span> <span style="float: right">October 2021 - till date</span></b><br>
+<b>Software engineer</b>
+<ul>
+<li>Part of Amazon.com world-wide back-end team.</li>
+<li>Personally owned a set of softwares that manage inter-warehouse transfer of goods across the globe.</li>
+<li>Worked to integrate <span class="highlightable">Kiva robots</span> with existing inventory softwares and infrastructures.</li>
+<li>Developed a software to pull items from <span class="highlightable">amazon.com</span> in bulk.</li>
+</ul>
+</div>
+
+<div class="inner_section">
+<b>Attentok (<span class="highlightable">own startup</span>)<span style="float: right">May 2019 - October 2021</span></b><br>
+<b>Founder and software developer</b>
+<ul>
+<li>Built attentok.com, a new chat app from scratch.</li>
+<li>Offered this as a <span class="highlightable">business internal communication solution</span>, as a startup.</li>
+</ul>
+</div>
+
+<div class="inner_section">
+<b>Qantas airways limited, <span class="highlightable">Australia</span> <span style="float: right">May 2016 - June 2017</span></b>
+<br>
+<b>Lead software developer and Subject matter expert</b><br>
+<ul>
+<li>Worked on <span class="highlightable">real-time flight management</span> back-end softwares.</li>
+<li>Owned a software that receives real-time feed from flights and airports around the world and process it.</li>
+<li>Developed a <span class="highlightable">maching learning module</span> that learns TTY message distribution history, and distribute new messages.</li>
+</ul>
+</div>
+
+<div class="inner_section">
+<b>Tata Consultancy Services, India <span style="float: right">October 2014 - May 2019</span></b><br>
+<b>Systems Engineer</b><br>
+Client - Qantas Airways Limited
+<ul>
+<li>Worked on <span class="highlightable">flight real-time data syndication software.</span></li>
+<li>Worked on flight data flow integration project, with partner companies.</li>
+</ul>
+</div>
+
+</div>
+
+<h2>WINS & RECOGNITIONS</h2>
+<div class="line"></div>
+<div class="section card_shelf">
+
+
+<div class="card">
+<a href="https://youtu.be/hqRckhB-fOE?t=6941">
+	<div class="image">
+		<img src="res/img/mit.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title"><span class="highlightable">Winner</span> of "MIT - Beat the pandemic" global hackathon</div>
+		<div class="description">I am a winner of the global hackathon event conducted <span class="highlightable">by MIT university, USA</span></div>
+	</div>
+	</a>
+</div>
+
+<div class="card">
+<a href="https://dbdb.io/db/icecoal">
+	<div class="image">
+		<img src="res/img/cmu.png"/>
+	</div>
+	<div class="bottom">
+		<div class="title"><span class="highlightable">Carnegie Mellon university</span> added my project in their database.</div>
+		<div class="description">CMU USA has added my project 'icecoal' in their database of databases.</div>
+	</div>
+	</a>
+</div>
+
+<div class="card">
+<a href="https://ui.adsabs.harvard.edu/abs/2022arXiv220808823L/abstract">
+	<div class="image">
+		<img src="res/img/nasa.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title"><span class="highlightable">NASA & Harvard university</span> maintain my <span class="highlightable">research paper</span> in their data system</div>
+		<div class="description">NASA & Harvard university runs a data system that maintains various research papers, which also includes mine.</div>
+	</div>
+	</a>
+</div>
+
+<div class="card">
+<a href="https://eparlib.nic.in/bitstream/123456789/835465/1/17_Joint_Committee_on_the_Personal_Data_Protection_Bill_2019_1.pdf">
+	<div class="image">
+		<img src="res/img/indian.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title"><span class="highlightable">Indian Parliament</span> - Contribution for personal data protection bill-2019</div>
+		<div class="description">My contribution towards the bill on personal data protection in indian parliament.</div>
+	</div>
+	</a>
+</div>
+
+<div class="card">
+	<div class="image">
+		<img src="res/img/certin.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title">Acknowledged by CERT india for a vulnerability discovery</div>
+		<div class="description">Acknowledged by CERT india team (<span class="highlightable">Government agency</span>) for a vulnerability discovery in a government website</div>
+	</div>
+</div>
+
+<div class="card">
+<a href="https://solve.mit.edu/challenges/health-security-pandemics/solutions/20398">
+	<div class="image">
+		<img src="res/img/mit.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title">Showcased my project 'Sodium' on MIT Solve event</div>
+		<div class="description">I showcased my project 'sodium', which I developed for COVID-19, in MIT Solve event.</div>
+	</div>
+	</a>
+</div>
+
+</div>
+
+<h2>ON NEWS</h2>
+<div class="line"></div>
+<div class="section card_shelf">
+
+<div class="card">
+<a href="https://theaustralian.com.au/business/aviation/qantas-calm-in-eye-of-storm-with-amadeus-delay-recovery-system/news-story/7312590eb971f52dc03fc5a133f658be">
+	<div class="image">
+		<img src="res/img/australian.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title">"The Australian" news featured our software.</div>
+		<div class="description">"The Australian" news praised our software, for its <span class="highlightable">extraordinary performance</span> on stormy days</div>
+	</div>
+	</a>
+</div>
+
+<div class="card">
+<a href="https://www.wsj.com/articles/when-a-pipe-bursts-at-amazon-this-engineer-jumps-into-action-11561122002">
+	<div class="image">
+		<img src="res/img/wsj.svg"/>
+	</div>
+	<div class="bottom">
+		<div class="title">"Wall street journal" news reported about my software.</div>
+		<div class="description">WSJ news reported about the <span class="highlightable">software I owned and developed new version in Amazon</span></div>
+	</div>
+	</a>
+</div>
+
+</div>
+
+<h2>SOME SIDE PROJECTS</h2>
+<div class="line"></div>
+<div class="section card_shelf">
+
+<div class="slip">
+	<a href="https://attentok.com">
+		<div class="image"><img src="res/img/attentok.svg"/></div>
+		<div class="bottom">
+			<div class="title">Attentok</div>
+			<div class="description">Private and group <span class="highlightable">chat app</span> for text, image and video calls.</div>
+		</div>
+	</a>
+</div>
+
+<div class="slip">
+	<a href="https://github.com/ppml38/icecoal">
+		<div class="image"><img src="res/img/icecoal.png"/></div>
+		<div class="bottom">
+			<div class="title">Icecoal</div>
+			<div class="description">Lightweight <span class="highlightable">SQL database</span></div>
+		</div>
+	</a>
+</div>
+
+<div class="slip">
+	<a href="https://github.com/ppml38/space_impact">
+		<div class="image"><img src="res/img/game.svg"/></div>
+		<div class="bottom">
+			<div class="title">Space impact</div>
+			<div class="description"><span class="highlightable">2D Game</span> - Onboard rocket and destroy meteors.</div>
+		</div>
+	</a>
+</div>
+
+<div class="slip">
+	<a href="https://github.com/ppml38/city_cruiser">
+		<div class="image"><img src="res/img/game.svg"/></div>
+		<div class="bottom">
+			<div class="title">City Cruiser</div>
+			<div class="description"><span class="highlightable">3D Game</span> - Open world free roaming in car.</div>
+		</div>
+	</a>
+</div>
+
+</div>
+
+<h2>RESEARCH PAPER</h2>
+<div class="line"></div>
+<div class="section">
+<div class="card">
+<a href="https://arxiv.org/pdf/2208.08823">
+	<div class="image" style="background-color: lightgray">
+		<img src="res/img/paper.jpg"/>
+	</div>
+	<div class="bottom">
+		<div class="title">Research paper on new algorithm</div>
+		<div class="description">Novel algorithm to generate shortest edit script using Levenshtein distance algorithm.</div>
+	</div>
+	</a>
+</div>
+</div>
+
+<h2>TECHNICAL SKILLS</h2>
+<div class="line"></div>
+<div class="section">
+<div class="inner_section">
+<ul>
+<li><b>Programming Languages :</b> Python, Java</li>
+<li><b>Databases :</b> PostgreSQL, DynamoDB, Redshift, Oracle, MySQL</li>
+<li><b>Web :</b> HTML5, CSS, Javascript, ReactJS</li>
+<li><b>Cloud :</b> AWS</li>
+<li><b>Release management :</b> Git</li>
+<li><b>Process :</b> Agile, Waterfall models</li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+<html>
