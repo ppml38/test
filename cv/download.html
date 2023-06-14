@@ -23,11 +23,17 @@ fetch("b64.txt")
 			}
 			return response.text();})
         .then((b64) => {
-			let a=document.getElementById("dl");
-			a.href = `data:application/octet-stream;base64, ${b64}`;
-			a.click();
-			document.getElementById("status").innerHTML = "Resume downloaded successfully (PrakashMariaLiju_Resume.pdf).";
-			document.getElementById("actual").style.display="block";
+			fetch(`data:application/octet-stream;base64, ${b64}`)
+			.then(res=>res.blob())
+			.then((b)=>{
+				let a=document.getElementById("dl");
+				a.href =  window.URL.createObjectURL(b);
+				a.click();
+				document.getElementById("status").innerHTML = "Resume downloaded successfully (PrakashMariaLiju_Resume.pdf).";
+				document.getElementById("actual").style.display="block";				
+				//window.URL.revokeObjectURL(a.href);
+			});
+			
 		})
 		.catch(()=>{
 			document.getElementById("status").innerHTML = "Redirecting to digital resume..";

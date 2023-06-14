@@ -96,8 +96,13 @@ fetch("b64.txt")
 			return response.text();
 		})
         .then((b64) => {
-			let a=document.getElementById("dl");
-			a.href = `data:application/octet-stream;base64, ${b64}`;
+			fetch(`data:application/octet-stream;base64, ${b64}`)
+			.then(res=>res.blob())
+			.then((b)=>{
+				let a=document.getElementById("dl");
+				a.href =  window.URL.createObjectURL(b);
+				//window.URL.revokeObjectURL(a.href);
+			});
 		})
 		.catch((error)=>{
 			//redirect them to our linkedin page.
