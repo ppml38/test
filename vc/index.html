@@ -13,7 +13,9 @@ body{
 font-family: "Segoe UI",Tahoma,Helvetica,Sans-Serif;
 margin: 0px;
 background-color: #e8eaed;
+background-image: url("bg.png");
 transition: all 0.6s ease;
+background-size: contain;
 }
 .container{
 width: 100%;
@@ -21,27 +23,51 @@ display: block;
 text-align: center;
 margin-top: 2rem;
 }
+.shine {
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.2))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#33ffffff',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 0px 2px 1px rgba(255, 255, 255, 0.7);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 100px 40px;
+    border-bottom-left-radius: 100px 40px;
+}
 .save{
 padding: .5rem;
 border: 1px solid transparent;
 border-radius: .5rem;
 background-color: #1a73e8;
+//background-color: rgba(26, 115, 232, .5);
 color: white;
 font-weight: bold;
 cursor: pointer;
+backdrop-filter: blur(3px);
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 .save:hover{
-background-color: #1b66c9;
 box-shadow: rgba(66, 64, 67, 0.15) 0px 1px 3px 1px, rgba(60, 64, 67, 0.3) 0px 1px 2px 0px;
+}
+.save:active{
+box-shadow: none;
 }
 .qr{
 display: inline-block;
 background-color: black;
 border-radius: .5rem;
-color: white;
+border: solid 1px whitesmoke;
+color: black;
+background-color: rgba(255,255,255,0.5);
+backdrop-filter: blur(10px);
+box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 .qr .code{
-padding: .5rem;
+padding: 1rem;
 padding-bottom: 0;
 }
 .qr .text{
@@ -50,6 +76,7 @@ font-weight: bold;
 }
 .divider{
 padding: .5rem;
+font-weight: bold;
 }
 </style>
 <script>
