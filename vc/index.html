@@ -70,6 +70,12 @@ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 padding: 1rem;
 padding-bottom: 0;
 }
+.qr .code img{
+height: 10rem;
+width: 10rem;
+background-color: white;
+padding: 1rem;
+}
 .qr .text{
 padding: 1rem;
 font-weight: bold;
@@ -77,6 +83,13 @@ font-weight: bold;
 .divider{
 padding: .5rem;
 font-weight: bold;
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
+.divider .text{
+background-color: white;
+padding: .3rem;
+border-radius: .3rem;
 }
 </style>
 <script>
@@ -108,12 +121,12 @@ fetch("b64.txt")
 <div class="container">
 <div class="qr">
 <div class="code">
-<img src="frame.png"/>
+<img src="qr.svg"/>
 </div>
-<div class="text">Scan to view my contact details</div>
+<div class="text">Scan to view on phone</div>
 </div>
-<div class="divider">OR</div>
-<button onclick="download();" class="save">Click to save my contact details</button>
+<div class="divider"><span class="text">AND/OR</span></div>
+<button onclick="download();" class="save">Save my contact</button>
 </div>
 <a id="dl" download="PrakashMariaLiju.vcf" style="display: none;">Save contact</a>
 </body>
