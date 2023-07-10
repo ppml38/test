@@ -65,7 +65,7 @@ h2{
 	display: flex;
 	align-items: center;
 	top: .5rem;
-	//background-color: white;
+	background-color: #f2f3f4;
 	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 	box-sizing: border-box;
 	position: fixed;
@@ -75,10 +75,15 @@ h2{
 	min-width: 60rem;
 	max-width: 60rem;
 	border-radius: 1rem;
-	//background-color: rgba(255,255,255,0.5);
-	backdrop-filter: blur(10px);
 	left: 50%;
 	transform: translate(-50%);
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .background {
+    background-color: rgba(255, 255, 255, .2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 }
 #titleName{
 	font-size: 1.5rem;
