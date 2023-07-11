@@ -5,6 +5,12 @@
 @keyframes animatetopin{from{top: -30%} to{top: 18%}}
 
 @keyframes copied{0%{transform:scale(0);} 50%{transform:scale(1);} 100%{transform:scale(0); display: none;}}
+:root{
+	--black: #202124;
+	--light-black: #4d5156;
+	--white: #fffafa;
+	--highlight: #fdcd3b;
+}
 body
 {
 	font-family: "Segoe UI",Tahoma,Helvetica,Sans-Serif;
@@ -13,7 +19,7 @@ body
 	//font-family: Google Sans, Noto Sans, Noto Sans JP, Noto Sans KR, Noto Naskh Arabic, Noto Sans Thai, Noto Sans Hebrew, Noto Sans Bengali, sans-serif;
 	margin: 0px;
 	//background-color: #e8eaed;
-	background-color: white;
+	background-color: var(--white);
 	transition: all 0.6s ease;
 }
 ul,p
@@ -30,9 +36,12 @@ ul
 h1
 {
 	font-weight: 500;
+	color: var(--black);
 }
 h2{
 	-webkit-margin-after: .20em;
+	color: var(--black);
+	font-weight: 600;
 }
 .inner_section
 {
@@ -42,9 +51,13 @@ h2{
 {
 	margin-top: 10px;
 	margin-bottom: 20px;
+	color: var(--light-black);
+}
+.section b{
+	color: var(--black);
 }
 .section a{
-	color: black;
+	color: var(--black);
 	text-decoration: none;
 }
 .section a:hover{
@@ -71,8 +84,8 @@ h2{
 	position: fixed;
 	padding: .5rem;
 	z-index: 9;
-	width: 60rem;
-	min-width: 60rem;
+	width: 99%;
+	//min-width: 60rem;
 	max-width: 60rem;
 	border-radius: 1rem;
 	left: 50%;
@@ -103,10 +116,10 @@ h2{
 .paper, .paper_print
 {
 	position: relative;
-	width: 54rem;
-	min-width: 54rem;
+	width: 97%;
+	//min-width: 54rem;
 	max-width: 54rem;
-	background-color: white;
+	background-color: var(--white);
 	border-radius: 1rem;
 	padding: 3rem;
 	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -128,7 +141,7 @@ h2{
 .icon,.link,.cp_icon{
 	height: 20px;
 	width: 20px;
-	background-color: white;
+	background-color: var(--white);
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgb(223, 223, 223);
@@ -142,7 +155,7 @@ h2{
 }
 .icon:hover
 {
-	border-color: white;
+	border-color: var(--white);
 	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
 
 }
@@ -155,7 +168,7 @@ h2{
 {
 	margin-left: .5rem;
 	padding: 10px;
-	background-color: white;
+	background-color: var(--white);
 	border-radius: .5rem;
 	cursor: pointer;
 	transition: all .3s ease;
@@ -164,7 +177,7 @@ h2{
 
 .stk
 {
-	stroke: black;
+	stroke: var(--black);
 	stroke-width: 3;
 }
 .back:hover
@@ -180,11 +193,11 @@ body::-webkit-scrollbar {
 }
  
 body::-webkit-scrollbar-track {
-	background-color: white;
+	background-color: var(--white);
 }
 
 body::-webkit-scrollbar-track:hover {
-	background-color: white;
+	background-color: var(--white);
 }
  
 body::-webkit-scrollbar-thumb {
@@ -199,7 +212,7 @@ body::-webkit-scrollbar-thumb:active {
 	padding-left: .3rem;
 	padding-right: .3rem;
 	border-radius: .3rem;
-	//background: linear-gradient(to left, transparent 50%, #fdcd3b 50%) right;
+	//background: linear-gradient(to left, transparent 50%, var(--highlight) 50%) right;
 	background: linear-gradient(to left, rgba(255,255,255,0) 50%, rgb(255, 229, 0) 50%) right;
     background-size: 200%;
     transition: all .5s ease;
@@ -250,7 +263,7 @@ body::-webkit-scrollbar-thumb:active {
 .card .title, .slip .title{
 	font-weight: bold;
 	transition: all .3s ease;
-	
+	color: var(--black);
 }
 .card:hover, .slip:hover{
 	box-shadow: 0px 2px 3px rgba(0,0,0,0.1), 0px -1px 1px rgba(0,0,0,0.1);
@@ -311,10 +324,10 @@ body::-webkit-scrollbar-thumb:active {
 {
 	display: flex;
 	position: relative;
-	background-color: white;
+	background-color: var(--white);
 	border-style: solid;
 	border-width: 1px;
-	border-color: white;
+	border-color: var(--white);
 	padding: 10px;
 	transition: all 0.2s ease;
 	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
@@ -329,7 +342,7 @@ body::-webkit-scrollbar-thumb:active {
 	border-style: solid;
 	border-width: 6px;
 	border-color: transparent;
-	border-bottom-color: white;
+	border-bottom-color: var(--white);
 }
 .msg
 {
@@ -338,14 +351,14 @@ body::-webkit-scrollbar-thumb:active {
 	right: 0;
 	bottom: -50%;
 	float: right;
-	background-color: white;
-	color: black;
+	background-color: var(--white);
+	color: var(--black);
 	font-size: small;
 	border-radius: 3px;
 	padding: 5px;
 	border-style: solid;
 	border-width: 1px;
-	border-color: white;
+	border-color: var(--white);
 	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
 }
 .link
@@ -396,23 +409,13 @@ body::-webkit-scrollbar-thumb:active {
   mix-blend-mode: overlay;
 }
 
-@media screen and (max-width: 480px) 
+@media screen and (max-width: 500px) 
 {
-	.background{
-		width: 100%;
-		min-width: 100%;
-		max-width: 100%;
-	}
-
 	.only_for_desktop{
-		display: none;
-		
+		display: none !important;
 	}
 	.paper
 	{
-		width: 95%;
-		min-width: 95%;
-		max-width: 95%;
 		padding: 1rem;
 	}
 	h3{
@@ -422,13 +425,13 @@ body::-webkit-scrollbar-thumb:active {
 
 @media print {
 	.highlightable{
-		background-color: #fdcd3b;
+		background-color: var(--highlight);
 	}
 	.background{
 		display: none;
 	}
 	body{
-		background-color: white;
+		background-color: var(--white);
 	}
 	.overlay{
 		display: none;
