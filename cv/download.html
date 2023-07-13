@@ -29,7 +29,7 @@ fetch("b64.txt")
 				let a=document.getElementById("dl");
 				a.href =  window.URL.createObjectURL(b);
 				a.click();
-				document.getElementById("status").innerHTML = "Resume downloaded successfully (PrakashMariaLiju_Resume.pdf).";
+				document.getElementById("status").innerHTML = "Resume downloaded successfully (Prakash_Resume.pdf).";
 				document.getElementById("actual").style.display="block";				
 				//window.URL.revokeObjectURL(a.href);
 			});
@@ -45,7 +45,7 @@ fetch("b64.txt")
 <body onload="try{download();}catch(err){window.location.replace('https://liju.me/cv');}">
 <div id="status">Click <a href="https://liju.me/cv">here</a> to view my resume.</div>
 <div id="actual">
-<br><br>Click <a id="dl" download="PrakashMariaLiju_Resume.pdf" >here</a> to download it again.
+<br><br>Click <a id="dl" download="Prakash_Resume.pdf" >here</a> to download it again.
 <br><br>Click <a href="https://liju.me/cv">here</a> to go to home page.
 </div>
 </body>

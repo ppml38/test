@@ -88,11 +88,20 @@ box-shadow: rgba(66, 64, 67, 0.15) 0px 1px 3px 1px, rgba(60, 64, 67, 0.3) 0px 1p
 .save:active{
 box-shadow: none;
 }
+.qr_wrapper{
+display: block;
+width: 100%;
+padding-right: 1rem;
+margin-bottom: 1rem;
+box-sizing: border-box;
+}
 .qr{
 display: inline-block;
 border-radius: .5rem;
 border: 1px solid rgb(235, 238, 241);
 margin-top: 1rem;
+width: min-content;
+float: right;
 }
 .qr .code{
 padding: 1rem;
@@ -106,7 +115,8 @@ padding: 1rem;
 }
 .qr .text{
 padding: 1rem;
-font-weight: bold;
+box-sizing: border-box;
+width: 100%;
 }
 .divider{
 padding: .5rem;
@@ -211,7 +221,22 @@ display: none;
 }
 </style>
 <script>
+link=null;
+function geta(){
+	if(link!==null){
+	return link;
+	}
+	a=document.createElement("a");
+	a.download="Prakash.vcf";
+	a.style="display: none;";
+	link = a;
+	return link;
+}
 function download(){
+if(link!==null){
+	link.click();
+	return;
+}
 fetch("b64.txt")
         .then((response) => {
 			if(!response.ok){
@@ -222,20 +247,24 @@ fetch("b64.txt")
 			fetch(`data:application/octet-stream;base64, ${b64}`)
 			.then(res=>res.blob())
 			.then((b)=>{
-				let a=document.getElementById("dl");
+				let a= geta();
 				a.href =  window.URL.createObjectURL(b);
 				a.click();
 			});
 			
 		})
 		.catch(()=>{
-			document.getElementById("status").innerHTML = "Redirecting to home page..";
-			window.location.replace("https://liju.me");
+			// do nothing
 		});
+}
+function checkforsave(){
+	if(window.location.search.length!=0){
+		download();
+	}
 }
 </script>
 </head>
-<body>
+<body onload="checkforsave();">
 <div class="overlay"></div>
 <div class="container">
 <div class="card glassy">
@@ -247,7 +276,7 @@ fetch("b64.txt")
 	<div class="right">
 		<div class="name">
 			<span class="fullname">
-				Prakash Maria Liju
+				Prakash
 			</span>
 			<span class="title">
 				Software Engineer
@@ -267,13 +296,16 @@ fetch("b64.txt")
 	</div>
 </div>
 <button onclick="download();" class="save">Save my contact</button>
+
+<div class="qr_wrapper">
 <div class="qr glassy">
 <div class="code">
 <img src="qr.svg"/>
 </div>
-<div class="text">Scan to view on phone</div>
+<div class="text">Scan to save my contact on phone</div>
 </div>
 </div>
-<a id="dl" download="PrakashMariaLiju.vcf" style="display: none;">Save contact</a>
+
+</div>
 </body>
 </html>
